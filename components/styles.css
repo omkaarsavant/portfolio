@@ -1,0 +1,103 @@
+/* styles.css */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 16px;
+}
+
+@media (min-width: 640px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.figure {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 800px;
+  height: 150px;
+}
+
+@media (min-width: 640px) {
+  .figure {
+    height: 250px;
+  }
+}
+
+@media (min-width: 768px) {
+  .figure {
+    height: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .figure {
+    height: 350px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .figure {
+    height: 400px;
+  }
+}
+
+.image {
+  height: 100px;
+  width: 100px;
+  object-cover: cover;
+  will-change: transform;
+}
+
+@media (min-width: 640px) {
+  .image {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+@media (min-width: 768px) {
+  .image {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .image {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .image {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+.mobile-warning {
+  position: absolute;
+  top: 16px;
+  text-align: center;
+  font-size: 12px;
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .mobile-warning {
+    display: block;
+  }
+}

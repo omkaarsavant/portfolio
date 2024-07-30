@@ -57,30 +57,28 @@ export const TextGenerateEffect = ({
 
   const renderWords = () => {
     return (
-      <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
-            <motion.span
-              key={word + idx}
-              className="dark:text-white text-black opacity-0"
-              style={{
-                filter: filter ? "blur(10px)" : "none",
-              }}
-            >
-              {word}{" "}
-            </motion.span>
-          );
-        })}
+      <motion.div ref={scope} className="flex flex-wrap gap-2">
+        {wordsArray.map((word, idx) => (
+          <motion.span
+            key={word + idx}
+            className="dark:text-white text-black opacity-0"
+            style={{
+              filter: filter ? "blur(10px)" : "none",
+            }}
+          >
+            {word}{" "}
+          </motion.span>
+        ))}
       </motion.div>
     );
   };
 
   return (
-    <div className={cn("font-bold", className)}>
-      <div className="mt-4">
+    <div className={cn("font-bold text-center px-4 md:px-8", className)}>
+      <div className="">
         <div
           ref={containerRef}
-          className="dark:text-white text-black text-5xl leading-snug tracking-wide ml-[500px]"
+          className="dark:text-white text-black text-3xl md:text-5xl leading-snug tracking-wide mx-auto"
         >
           {renderWords()}
         </div>

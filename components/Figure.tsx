@@ -68,7 +68,7 @@ const Figure: React.FC<FigureProps> = ({ src, alt }) => {
   return (
     <figure
       ref={ref}
-      className="relative flex h-[600px] flex-col items-center justify-center overflow-hidden"
+      className="relative flex h-[150px] sm:h-[300px] flex-col items-center justify-center overflow-hidden m-1"
       style={{
         perspective: "800px",
       }}
@@ -77,7 +77,7 @@ const Figure: React.FC<FigureProps> = ({ src, alt }) => {
       onMouseLeave={handleMouseLeave}
     >
       <div className="absolute top-4 text-center text-sm sm:hidden">
-        This effect is not optimized for mobile. Check on desktop.
+        
       </div>
       <motion.img
         src={src}
@@ -87,7 +87,7 @@ const Figure: React.FC<FigureProps> = ({ src, alt }) => {
           rotateY,
           scale,
         }}
-        className="h-[300px] w-[300px] object-cover will-change-transform"
+        className="h-[150px] w-[150px] sm:h-[300px] sm:w-[300px] object-cover will-change-transform"
       />
     </figure>
   );

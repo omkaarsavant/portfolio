@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { ContainerScroll } from "../components/container-scroll-animation";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,7 +20,6 @@ import { SiCredly } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiQwiklabs } from "react-icons/si";
 
-
 export const ButtonShootingStarBorder = () => {
   const buttons = [
     { icon: FaLinkedin, text: "omkar-savant", href: "https://www.linkedin.com/in/omkar-savant/", delay: 0.3 },
@@ -29,173 +28,36 @@ export const ButtonShootingStarBorder = () => {
     { icon: FaXTwitter, text: "omkaarsavant", href: "https://twitter.com/omkaarsavant", delay: 0.6 },
     { icon: SiQwiklabs, text: "Omkar Savant", href: "https://www.cloudskillsboost.google/public_profiles/a4423f31-81c5-4139-9727-072d87c5010c", delay: 0.7 },
   ];
-
   return (
-    <div className="mt-[20px]">
-      <div className="ml-[650px] mt-[20px]">
-        {buttons.slice(0, 1).map((button, index) => {
-          const Icon = button.icon;
-          return (
-            <motion.button
-              key={index}
-              initial={{ opacity: 0.5, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: button.delay,
-                duration: 0.8,
-                ease: "easeInOut",
-              }}
-              onClick={() => window.open(button.href, "_blank")}
-              className={`group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200`}
-            >
-              <span>
-                <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
-              </span>
-              <span className="backdrop absolute inset-[1px] rounded-full bg-neutral-950 transition-colors duration-200 group-hover:bg-neutral-800" />
-              <span className="relative z-10 flex items-center py-0.5 text-xl text-neutral-100">
-                <Icon className="mr-2" /> {button.text}
-              </span>
-            </motion.button>
-          );
-        })}
-      </div>
-      <div className="ml-[850px] mt-[-40px]">
-        {buttons.slice(1, 2).map((button, index) => {
-          const Icon = button.icon;
-          return (
-            <motion.button
-              key={index}
-              initial={{ opacity: 0.5, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: button.delay,
-                duration: 0.8,
-                ease: "easeInOut",
-              }}
-              onClick={() => window.open(button.href, "_blank")}
-              className={`group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200`}
-            >
-              <span>
-                <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
-              </span>
-              <span className="backdrop absolute inset-[1px] rounded-full bg-neutral-950 transition-colors duration-200 group-hover:bg-neutral-800" />
-              <span className="relative z-10 flex items-center py-0.5 text-xl text-neutral-100">
-                <Icon className="mr-2" /> {button.text}
-              </span>
-            </motion.button>
-          );
-        })}
-      </div>
-      <div className="ml-[1050px] mt-[-40px]">
-        {buttons.slice(2, 3).map((button, index) => {
-          const Icon = button.icon;
-          return (
-            <motion.button
-              key={index}
-              initial={{ opacity: 0.5, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: button.delay,
-                duration: 0.8,
-                ease: "easeInOut",
-              }}
-              onClick={() => window.open(button.href, "_blank")}
-              className={`group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200`}
-            >
-              <span>
-                <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
-              </span>
-              <span className="backdrop absolute inset-[1px] rounded-full bg-neutral-950 transition-colors duration-200 group-hover:bg-neutral-800" />
-              <span className="relative z-10 flex items-center py-0.5 text-xl text-neutral-100">
-                <Icon className="mr-2" /> {button.text}
-              </span>
-            </motion.button>
-          );
-        })}
-      </div>
-      <div className="ml-[750px] mt-[10px]">
-        {buttons.slice(3, 4).map((button, index) => {
-          const Icon = button.icon;
-          return (
-            <motion.button
-              key={index}
-              initial={{ opacity: 0.5, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: button.delay,
-                duration: 0.8,
-                ease: "easeInOut",
-              }}
-              onClick={() => window.open(button.href, "_blank")}
-              className={`group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200`}
-            >
-              <span>
-                <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
-              </span>
-              <span className="backdrop absolute inset-[1px] rounded-full bg-neutral-950 transition-colors duration-200 group-hover:bg-neutral-800" />
-              <span className="relative z-10 flex items-center py-0.5 text-xl text-neutral-100">
-                <Icon className="mr-2" /> {button.text}
-              </span>
-            </motion.button>
-          );
-        })}
-      </div>
-      <div className="ml-[950px] mt-[-40px]">
-        {buttons.slice(4, 5).map((button, index) => {
-          const Icon = button.icon;
-          return (
-            <motion.button
-              key={index}
-              initial={{ opacity: 0.5, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: button.delay,
-                duration: 0.8,
-                ease: "easeInOut",
-              }}
-              onClick={() => window.open(button.href, "_blank")}
-              className={`group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200`}
-            >
-              <span>
-                <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
-              </span>
-              <span className="backdrop absolute inset-[1px] rounded-full bg-neutral-950 transition-colors duration-200 group-hover:bg-neutral-800" />
-              <span className="relative z-10 flex items-center py-0.5 text-xl text-neutral-100">
-                <Icon className="mr-2" /> {button.text}
-              </span>
-            </motion.button>
-          );
-        })}
-      </div>
+    <div className="mt-[20px] flex flex-wrap justify-center">
+      {buttons.map((button, index) => {
+        const Icon = button.icon;
+        return (
+          <motion.button
+            key={index}
+            initial={{ opacity: 0.5, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: button.delay,
+              duration: 0.8,
+              ease: "easeInOut",
+            }}
+            onClick={() => window.open(button.href, "_blank")}
+            className={`group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200 m-2`}
+          >
+            <span>
+              <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
+            </span>
+            <span className="backdrop absolute inset-[1px] rounded-full bg-neutral-950 transition-colors duration-200 group-hover:bg-neutral-800" />
+            <span className="relative z-10 flex items-center py-0.5 text-xl text-neutral-100">
+              <Icon className="mr-2" /> {button.text}
+            </span>
+          </motion.button>
+        );
+      })}
     </div>
   );
 };
-
-
-/* 
-tailwind.config.ts
-
-...
-extend: {
-  animation: {
-    flip: "flip 6s infinite steps(2, end)",
-    rotate: "rotate 3s linear infinite both",
-  },
-  keyframes: {
-    flip: {
-      to: {
-        transform: "rotate(360deg)",
-      },
-    },
-    rotate: {
-      to: {
-        transform: "rotate(90deg)",
-      },
-    },
-  },
-}
-*/
-
 
 export const InputBorderSpotlight = () => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -229,7 +91,6 @@ export const InputBorderSpotlight = () => {
       )}`;
     }
   };
-
   return (
     <motion.div
       initial={{ opacity: 0.5, y: 100 }}
@@ -241,46 +102,9 @@ export const InputBorderSpotlight = () => {
       }}
       className="flex mt-[-300px] ml-[800px] w-80 relative items-center"
     >
-      <input
-        ref={inputRef}
-        onMouseMove={handleMouseMove}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        onChange={handleEmailChange}
-        value={email}
-        autoComplete="off"
-        placeholder="Enter your email address"
-        type="email"
-        name="email"
-        className="relative h-10 w-full cursor-default rounded-md border border-neutral-800 bg-neutral-950 p-3.5 text-slate-100 transition-colors duration-500 placeholder:select-none placeholder:text-neutral-500 focus:border-[rgb(207_174_255)] focus:outline-none"
-        style={{
-          backgroundImage: isFocused
-            ? `radial-gradient(circle at ${position.x}px ${position.y}px, rgba(207, 174, 255, 0.5) 0%, transparent 40%)`
-            : "none",
-        }}
-      />
-      <button
-        onClick={handleSendClick}
-        className="ml-2 h-10 w-10 flex items-center justify-center rounded-md bg-neutral-950 p-3.5 text-slate-100"
-        aria-label="Send Email"
-      >
-        ➔
-      </button>
-      <input
-        ref={inputRef}
-        disabled
-        style={{
-          border: "1px solid rgb(207 174 255)",
-          opacity: 0.5,
-          WebkitMaskImage: `radial-gradient(30% 30px at ${position.x}px ${position.y}px, black 45%, transparent)`,
-        }}
-        aria-hidden="true"
-        className="border-[rgb(207 174 255)] pointer-events-none absolute left-0 top-0 z-10 h-10 w-full cursor-default rounded-md border bg-[transparent] p-3.5 opacity-0  transition-opacity duration-500 placeholder:select-none"
-      />
     </motion.div>
   );
 };
-
 
 export function LampDemo() {
   return (
@@ -293,248 +117,136 @@ export function LampDemo() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="mt-2 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+        className=" bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
       >
         Lets <br /> Connect!
       </motion.h1>
     </LampContainer>
   );
 }
-
-
 function AnimatedPinDemo() {
   return (
-    <div className="h-[40rem]  flex items-center justify-center mt-[-600px] ">
-      <PinContainer
-        title="Microsoft"
-        href="https://learn.microsoft.com/en-in/users/omkarsavant-1517/credentials/269613d32052892a"
-      >
-        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]  ">
-          <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-            Microsoft Certified
-
-          </h3>
-          <div className="text-base !m-0 !p-0 font-normal">
-            <span className="text-slate-500 ">
-            Azure AI Engineer Associate 
-            
-            </span>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-48 mt-[-100px]">
+      <div className="flex justify-center p-2">
+        <PinContainer
+          title="Microsoft"
+          href="https://learn.microsoft.com/en-in/users/omkarsavant-1517/credentials/269613d32052892a"
+        >
+          <div className="flex flex-col tracking-tight text-slate-100/50 w-[20rem] h-[20rem]">
+            <h3 className="font-bold text-base text-slate-100">Microsoft Certified</h3>
+            <div className="text-base text-slate-500 mb-2">Azure AI Engineer Associate</div>
+            <div
+              className="flex-1 w-full rounded-lg bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: 'url("/images/ai.png")' }}
+            />
           </div>
-          <div className="flex flex-1 w-full rounded-lg mt-4 bg-cover bg-center bg-no-repeat"
-               style={{ backgroundImage: 'url("/images/ai.png")' }} />
-        </div>
-      </PinContainer>
-      <PinContainer
-        title="Microsoft"
-        href="https://learn.microsoft.com/en-in/users/omkarsavant-1517/credentials/68c74e9d612ff42d"
-      >
-        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]  ">
-          <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-          Microsoft Certified
-          </h3>
-          <div className="text-base !m-0 !p-0 font-normal">
-            <span className="text-slate-500 ">
-            Azure AI Fundamentals 
-            </span>
+        </PinContainer>
+      </div>
+      <div className="flex justify-center p-4">
+        <PinContainer
+          title="Microsoft"
+          href="https://learn.microsoft.com/en-in/users/omkarsavant-1517/credentials/68c74e9d612ff42d"
+        >
+          <div className="flex flex-col tracking-tight text-slate-100/50 w-[20rem] h-[20rem]">
+            <h3 className="font-bold text-base text-slate-100 mb-2">Microsoft Certified</h3>
+            <div className="text-base text-slate-500 mb-2">Azure AI Fundamentals</div>
+            <div
+              className="flex-1 w-full rounded-lg bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: 'url("/images/fun.png")' }}
+            />
           </div>
-          <div className="flex flex-1 w-full rounded-lg mt-4 bg-cover bg-center bg-no-repeat"
-               style={{ backgroundImage: 'url("/images/fun.png")' }} />
-        </div>
-      </PinContainer>
-      <PinContainer
-        title="Microsoft"
-        href="https://learn.microsoft.com/en-in/users/omkarsavant-1517/credentials/e3c8a056aeefcb98"
-      >
-        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]  ">
-          <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-          Microsoft Certified
-          </h3>
-          <div className="text-base !m-0 !p-0 font-normal">
-            <span className="text-slate-500 ">
-              Azure Data Scientist Associate
-            </span>
+        </PinContainer>
+      </div>
+      <div className="flex justify-center p-4">
+        <PinContainer
+          title="Microsoft"
+          href="https://learn.microsoft.com/en-in/users/omkarsavant-1517/credentials/e3c8a056aeefcb98"
+        >
+          <div className="flex flex-col tracking-tight text-slate-100/50 w-[20rem] h-[20rem]">
+            <h3 className="font-bold text-base text-slate-100 mb-2">Microsoft Certified</h3>
+            <div className="text-base text-slate-500 mb-2">Azure Data Scientist Associate</div>
+            <div
+              className="flex-1 rounded-lg bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: 'url("/images/data.png")' }}
+            />
           </div>
-          <div className="flex flex-1 w-full rounded-lg mt-4 bg-cover bg-center bg-no-repeat"
-               style={{ backgroundImage: 'url("/images/data.png")' }} />
-        </div>
-      </PinContainer>
+        </PinContainer>
+      </div>
+      <div className="flex justify-center p-4">
+        <PinContainer
+          title="Credly"
+          href="https://www.credly.com/badges/a01437ea-1e53-4519-9e80-ff5d60fb1f12"
+        >
+          <div className="flex flex-col tracking-tight text-slate-100/50 w-[20rem] h-[20rem]">
+            <h3 className="font-bold text-base text-slate-100 mb-2">Google Cloud Certified</h3>
+            <div className="text-base text-slate-500 mb-2">Cloud Digital Leader</div>
+            <div
+              className="flex-1 w-full rounded-lg bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: 'url("/images/cdl.png")' }}
+            />
+          </div>
+        </PinContainer>
+      </div>
+      <div className="flex justify-center p-4">
+        <PinContainer
+          title="Credly"
+          href="https://www.credly.com/badges/18aa3d90-88bf-424a-a2fb-970441f687ab/"
+        >
+          <div className="flex flex-col tracking-tight text-slate-100/50 w-[20rem] h-[20rem]">
+            <h3 className="font-bold text-base text-slate-100 mb-2">GitHub Certified</h3>
+            <div className="text-base text-slate-500 mb-2">Foundation</div>
+            <div
+              className="flex-1 w-full rounded-lg bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: 'url("/images/g1.png")' }}
+            />
+          </div>
+        </PinContainer>
+      </div>
+      <div className="flex justify-center p-4">
+        <PinContainer
+          title="Credly"
+          href="https://www.credly.com/badges/12f6eafc-fcd7-4b20-a51e-5c46be660d64/"
+        >
+          <div className="flex flex-col tracking-tight text-slate-100/50 w-[20rem] h-[20rem]">
+            <h3 className="font-bold text-base text-slate-100 mb-2">GitHub Certified</h3>
+            <div className="text-base text-slate-500 mb-2">Advanced Security</div>
+            <div
+              className="flex-1 w-full rounded-lg bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: 'url("/images/g2.png")' }}
+            />
+          </div>
+        </PinContainer>
+      </div>
     </div>
   );
 }
-function AnimatedPinDemo2() {
-  return (
-    <div className="h-[40rem]  flex items-center justify-center mt-[-250px] ">
-      <PinContainer
-        title="Credly"
-        href="https://www.credly.com/badges/a01437ea-1e53-4519-9e80-ff5d60fb1f12"
-      >
-        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]  ">
-          <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-            Google Cloud Certified
-          </h3>
-          <div className="text-base !m-0 !p-0 font-normal">
-            <span className="text-slate-500 ">
-              Cloud Digital Leader
-            </span>
-          </div>
-          <div className="flex flex-1 w-full rounded-lg mt-4 bg-cover bg-center bg-no-repeat"
-               style={{ backgroundImage: 'url("/images/cdl.png")' }} />
-        </div>
-      </PinContainer>
-      <PinContainer
-        title="Credly"
-        href="https://www.credly.com/badges/18aa3d90-88bf-424a-a2fb-970441f687ab/"
-      >
-        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]  ">
-          <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-            GitHub Certified
-          </h3>
-          <div className="text-base !m-0 !p-0 font-normal">
-            <span className="text-slate-500 ">
-             Foundation
-            </span>
-          </div>
-          <div className="flex flex-1 w-full rounded-lg mt-4 bg-cover bg-center bg-no-repeat"
-               style={{ backgroundImage: 'url("/images/g1.png")' }} />
-        </div>
-      </PinContainer>
-      <PinContainer
-        title="Credly"
-        href="https://www.credly.com/badges/12f6eafc-fcd7-4b20-a51e-5c46be660d64/"
-      >
-        <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem]  ">
-          <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-          GitHub Certified
-          </h3>
-          <div className="text-base !m-0 !p-0 font-normal">
-            <span className="text-slate-500 ">
-            
-         Advanced Security
-            </span>
-          </div>
-          <div className="flex flex-1 w-full rounded-lg mt-4 bg-cover bg-center bg-no-repeat"
-               style={{ backgroundImage: 'url("/images/g2.png")' }} />
-        </div>
-      </PinContainer>
-    </div>
-  );
-}
-
 
 export function ShootingStarsAndStarsBackgroundDemo() {
   return (
-    <div className="h-[40rem]">
-      <h2 className=" flex-col md:flex-row z-10 text-3xl md:text-7xl md:leading-tight max-w-5xl mx-auto  tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-white to-white flex items-center gap-2 md:gap-8">
-        <span className="ml-[150px] items-center">Notable Certifications</span>
+    <div className="">
+      <h2 className=" flex-col md:flex-row z-10 text-3xl md:text-7xl md:leading-tight max-w-5xl mx-auto   font-medium bg-clip-text flex items-center gap-2 md:gap-8">
+        <span className=" mx-auto items-center"> Notable Certifications</span>
       </h2>
       <ShootingStars />
     </div>
   );
 }
 
-
-const words = `He is skilled in...
-`;
+const words = `He is skilled in...`;
 
 function TextGenerateEffectDemo() {
-  return <TextGenerateEffect words={words} />;
-}
-
-
-function BackgroundGradientDemo() {
   return (
-    <div className="  justify-center items-center min-h-screen ml-[375px] mt-[50px] ">
-      <div className="flex space-x-4">
-        <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900  ">
-          <Image
-            src={`/images/cpp.png`}
-            alt="C++ Logo"
-            height="200"
-            width="200"
-            className="object-contain"
-          />
-        </BackgroundGradient>
-        <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900 ">
-          <Image
-            src={`/images/java.png`}
-            alt="C++ Logo"
-            height="200"
-            width="200"
-            className="object-contain"
-          />
-        </BackgroundGradient>
-        <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900 ">
-          <Image
-            src={`/images/gcp.png`}
-            alt="C++ Logo"
-            height="200"
-            width="200"
-            className="object-contain"
-          />
-        </BackgroundGradient>
-        <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900 ">
-          <Image
-            src={`/images/cpp.png`}
-            alt="C++ Logo"
-            height="200"
-            width="200"
-            className="object-contain"
-          />
-        </BackgroundGradient>
-        
-      </div>
+    <div className="">
+    <div className="flex max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans ">
+      <TextGenerateEffect words={words} />
     </div>
-  );
-}
-function BackgroundGradientDemo2() {
-  return (
-    <div className="  justify-center items-center min-h-screen ml-[375px] mt-[-580px] ">
-      <div className="flex space-x-4">
-        <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900  ">
-          <Image
-            src={`/images/cpp.png`}
-            alt="C++ Logo"
-            height="200"
-            width="200"
-            className="object-contain"
-          />
-        </BackgroundGradient>
-        <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900 ">
-          <Image
-            src={`/images/java.png`}
-            alt="C++ Logo"
-            height="200"
-            width="200"
-            className="object-contain"
-          />
-        </BackgroundGradient>
-        <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900 ">
-          <Image
-            src={`/images/gcp.png`}
-            alt="C++ Logo"
-            height="200"
-            width="200"
-            className="object-contain"
-          />
-        </BackgroundGradient>
-        <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900 ">
-          <Image
-            src={`/images/cpp.png`}
-            alt="C++ Logo"
-            height="200"
-            width="200"
-            className="object-contain"
-          />
-        </BackgroundGradient>
-        
-      </div>
     </div>
   );
 }
 
 function ThreeDCardDemo() {
   return (
-    <div className="flex justify-center space-x-4">
+    <div className="flex flex-wrap justify-center space-x-4 space-y-4 sm:space-y-0">
       <Link legacyBehavior href="https://github.com/omkaarsavant/Villa-Booking" passHref>
         <a target="_blank" rel="noopener noreferrer" className="block">
           <CardContainer className="inter-var cursor-pointer">
@@ -612,6 +324,7 @@ function ThreeDCardDemo() {
           </CardContainer>
         </a>
       </Link>
+      
       <Link legacyBehavior href="https://mkphotographyandfilms.com/water/home1/index.html" passHref>
         <a target="_blank" rel="noopener noreferrer" className="block">
           <CardContainer className="inter-var cursor-pointer">
@@ -627,7 +340,7 @@ function ThreeDCardDemo() {
                 translateZ="60"
                 className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
               >
-                A Social Awareness website about Gangapur Dam, and its Desilting Process. Created for Winjit Technologies.
+                A Social Awareness website about Gangapur Dam, and its Desilting Process. Were First Runner up. Created for Winjit Technologies. 
               </CardItem>
               <CardItem translateZ="100" className="w-full mt-4">
                 <Image
@@ -656,9 +369,7 @@ function ThreeDCardDemo() {
 
 function ThreeDCardDemo2() {
   return (
-    <div className="mt-[-135px] flex justify-center space-x-4">
-      
-
+    <div className="mt-[-135px] flex flex-wrap justify-center space-x-4 space-y-4 sm:space-y-0">
       <Link legacyBehavior href="https://github.com/omkaarsavant/Pravaas-Derailment-Prevention-by-Track-Object-Detection" passHref>
         <a target="_blank" rel="noopener noreferrer" className="block">
           <CardContainer className="inter-var cursor-pointer">
@@ -697,6 +408,7 @@ function ThreeDCardDemo2() {
           </CardContainer>
         </a>
       </Link>
+      
       <CardContainer className="inter-var">
         <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
           <CardItem
@@ -710,7 +422,7 @@ function ThreeDCardDemo2() {
             translateZ="60"
             className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
           >
-            Enhanced the College  mentor website by implementing a dynamic backend using PHP and MySQL. Also improved User Experience
+            Enhanced the College  mentor website by implementing a dynamic backend using PHP and MySQL. Also improved User Interface.
           </CardItem>
           <CardItem translateZ="100" className="w-full mt-4">
             <Image
@@ -723,22 +435,17 @@ function ThreeDCardDemo2() {
           </CardItem>
           <div className="flex justify-between items-center mt-20">
           <CardItem
-              translateZ={20}
-              as={Link}
-              href="https://github.com/omkaarsavant/-Online-IEEE-Paper-Generation-System"
-              target="__blank"
-              className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-            >
-              ‎ ‎ ‎ ‎ ‎ 
-            </CardItem>
-          </div>
+                  translateZ={20}
+                  
+                >
+                  ‎‎‎‎
+                </CardItem>
+              </div>
         </CardBody>
       </CardContainer>
     </div>
   );
 }
-
-
 
 function FlipWordsDemo() {
   const words = ["Cloud", "Web", "Software", "Machine Learning", "Tech"];
@@ -754,7 +461,6 @@ function FlipWordsDemo() {
   );
 }
 
-
 function AppleCardsCarouselDemo() {
   const cards = data.map((card, index) => (
     <Card key={card.src} card={card} index={index} />
@@ -769,8 +475,6 @@ function AppleCardsCarouselDemo() {
     </div>
   );
 }
-
-
 
 const data = [
   {
@@ -808,15 +512,6 @@ const data = [
   },
 
 ];
-
-
-
-
-
-
-
-
-
 // Navbar Component
 function Navbar({ className }: { className?: string }) {
   return (
@@ -865,30 +560,25 @@ function Navbar({ className }: { className?: string }) {
 
 // MainPage Component
 export default function MainPage() {
-  const imagesSet1 = [
+  const allImages = [
     { src: '/images/cpp.png', alt: 'CPP Image 1' },
     { src: '/images/java2.png', alt: 'CPP Image 2' },
     { src: '/images/gcp2.png', alt: 'CPP Image 2' },
-    { src: '/images/sql.png', alt: 'CPP Image 2' }
-  ];
-
-   const imagesSet2 = [
+    { src: '/images/sql.png', alt: 'CPP Image 2' },
     { src: '/images/git.png', alt: 'CPP Image 3' },
     { src: '/images/php.png', alt: 'CPP Image 4' },
     { src: '/images/aws.png', alt: 'CPP Image 4' },
-    { src: '/images/python.png', alt: 'CPP Image 4' }
-  ]; 
-  const imagesSet3 = [
+    { src: '/images/python.png', alt: 'CPP Image 4' },
     { src: '/images/az.png', alt: 'CPP Image 3' },
     { src: '/images/next.png', alt: 'CPP Image 4' },
     { src: '/images/react.png', alt: 'CPP Image 4' },
-    { src: '/images/css.png', alt: 'CPP Image 4' }
-  ]; 
-  const imagesSet4 = [
+    { src: '/images/css.png', alt: 'CPP Image 4' },
     { src: '/images/sales.png', alt: 'CPP Image 3' },
     { src: '/images/table.png', alt: 'CPP Image 4' }
-  ]; 
+  ];
+
   return (
+    
     <div>
       {/* Smooth scrolling CSS */}
       <style jsx global>{`
@@ -909,30 +599,21 @@ export default function MainPage() {
      </div>
      <ThreeDCardDemo />
       <ThreeDCardDemo2 />
-     <div id="skills">
-        <TextGenerateEffectDemo />
-        <div className="mt-[-200px]">
-        <MouseFollowCaption images={imagesSet1} />
-        <div className="mt-[-600px]">
-        <MouseFollowCaption images={imagesSet2} />
-        </div>
-        <div className="mt-[-600px]">
-        <MouseFollowCaption images={imagesSet3} />
-        </div>
-        <div className="mt-[-600px]">
-        <MouseFollowCaption images={imagesSet4} />
-        </div>
-        </div>
-      </div>
+      <div id="skills">
+      <TextGenerateEffectDemo />
+      <MouseFollowCaption images={allImages} />
+</div>
       <div id="certifications">
         <ShootingStarsAndStarsBackgroundDemo />
         <div className="relative z-0">
         <AnimatedPinDemo />
-        <AnimatedPinDemo2 />
+        
         </div>
       </div>
-      <div id="socials">
+      <div id="socials" className="mt-[-100px] ">
+        <div>
         <LampDemo />
+        </div>
         <div className="relative z-1">
         <InputBorderSpotlight />
         </div>
@@ -942,16 +623,15 @@ export default function MainPage() {
   );
 }
 
-// HeroScrollDemo Component
 function HeroScrollDemo() {
   return (
-    <div className="flex flex-col overflow-hidden " id="hero-section">
+    <div className="flex flex-col overflow-hidden mt-20" id="hero-section">
       <ContainerScroll
         titleComponent={
           <>
-            <h1 className="text-4xl font-semibold text-black dark:text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-black dark:text-white">
               Welcome to my <br />
-              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none" style={{ paddingBottom: '100px' }}>
+              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-[6rem] font-bold mt-1 leading-none" style={{ paddingBottom: '100px' }}>
                 Portfolio!
               </span>
             </h1>
@@ -963,7 +643,7 @@ function HeroScrollDemo() {
           alt="hero"
           height={720}
           width={1400}
-          className="mx-auto rounded-2xl object-cover h-full object-left-top"
+          className="mx-auto rounded-2xl object-cover h-72 sm:h-96 md:h-[36rem] lg:h-[48rem] object-center md:object-left-top"
           draggable={false}
         />
       </ContainerScroll>
@@ -971,13 +651,18 @@ function HeroScrollDemo() {
   );
 }
 
-// NavbarDemo Component
+
+
 function NavbarDemo() {
   return (
     <div className="relative w-full flex items-center justify-center">
+       <div className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl hidden lg:block top-2">
       <Navbar className="top-2" />
+      </div>
     </div>
   );
 }
+
+
 
 

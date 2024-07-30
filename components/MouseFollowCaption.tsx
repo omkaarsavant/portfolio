@@ -8,7 +8,7 @@ interface MouseFollowCaptionProps {
 
 const MouseFollowCaption: React.FC<MouseFollowCaptionProps> = ({ images }) => {
   return (
-    <div className="flex justify-center items-center min-h-screen space-x-8">
+    <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-4 p-24">
       {images.map((image, index) => (
         <Figure key={index} src={image.src} alt={image.alt} />
       ))}
